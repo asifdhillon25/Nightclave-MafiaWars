@@ -1,145 +1,115 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
-
+  darkMode: 'class', // or 'media' if you prefer system preference
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
-      /* =========================
-         TYPOGRAPHY
-      ========================= */
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-        mono: ["JetBrains Mono", "ui-monospace"],
-      },
-
-      /* =========================
-         COLORS — AURORA TEAL
-      ========================= */
       colors: {
-        /* ---------- LIGHT MODE ---------- */
-        light: {
-          background: "#F8FBFA",       // Bright, clean, premium
-          surface: "#FFFFFF",
-          surfaceMuted: "#EEF6F4",
-
-          textPrimary: "#0B1220",       // Deep neutral
-          textSecondary: "#425466",
-          textMuted: "#8B9BB0",
-
-          primary: "#0EA5A4",           // Teal-cyan (modern)
-          primaryHover: "#0B8C8B",
-
-          accent: "#22D3EE",            // Aqua highlight
-          accentSoft: "rgba(34,211,238,0.16)",
-
-          border: "rgba(15,23,42,0.06)",
-
-          success: "#16A34A",
-          warning: "#F59E0B",
-          error: "#EF4444",
-
-          glass: "rgba(255,255,255,0.75)",
-          glassBorder: "rgba(255,255,255,0.45)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
-
-        /* ---------- DARK MODE ---------- */
-        dark: {
-          background: "#050F14",        // Blue-green black
-          surface: "#081A20",           // Deep teal slate
-          surfaceMuted: "#0C2530",
-
-          textPrimary: "#ECFEFF",       // Cyan-50
-          textSecondary: "#A5F3FC",
-          textMuted: "#67E8F9",
-
-          primary: "#22D3EE",           // Cyan glow
-          primaryHover: "#06B6D4",
-
-          accent: "#5EEAD4",            // Mint-teal pop
-          accentSoft: "rgba(94,234,212,0.18)",
-
-          border: "rgba(165,243,252,0.18)",
-
-          success: "#22C55E",
-          warning: "#FACC15",
-          error: "#F87171",
-
-          glass: "rgba(8,26,32,0.72)",
-          glassBorder: "rgba(94,234,212,0.28)",
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          foreground: "hsl(var(--info-foreground))",
+        },
+        // Role colors
+        mafia: {
+          DEFAULT: "hsl(var(--mafia))",
+          foreground: "hsl(var(--mafia-foreground))",
+        },
+        civilian: {
+          DEFAULT: "hsl(var(--civilian))",
+          foreground: "hsl(var(--civilian-foreground))",
+        },
+        doctor: {
+          DEFAULT: "hsl(var(--doctor))",
+          foreground: "hsl(var(--doctor-foreground))",
+        },
+        detective: {
+          DEFAULT: "hsl(var(--detective))",
+          foreground: "hsl(var(--detective-foreground))",
+        },
+        granny: {
+          DEFAULT: "hsl(var(--granny))",
+          foreground: "hsl(var(--granny-foreground))",
         },
       },
-
-      /* =========================
-         GRADIENTS
-      ========================= */
-backgroundImage: {
-  /* ---------- Sidebar gradients ---------- */
-  "sidebar-gradient-light":
-    "linear-gradient(180deg, rgba(16,185,129,0.45), rgba(5,150,105,0.25))",
-  "sidebar-gradient-dark":
-    "linear-gradient(180deg, rgba(6,95,70,0.85), rgba(16,185,129,0.35))",
-
-  /* ---------- Accent / Highlight ---------- */
-  "accent-gradient":
-    "linear-gradient(135deg, #06B6D4, #059669)",
-
-  /* ---------- Glass effect for cards ---------- */
-  "glass-gradient-light":
-    "linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.45))",
-  "glass-gradient-dark":
-    "linear-gradient(180deg, rgba(11,31,24,0.75), rgba(16,185,129,0.35))",
-},
-
-
-
-      /* =========================
-         RADIUS
-      ========================= */
       borderRadius: {
-        sm: "8px",
-        md: "12px",
-        lg: "16px",
-        xl: "20px",
-        "2xl": "28px",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
-
-      /* =========================
-         SHADOWS — CLEAN & FLOATY
-      ========================= */
-      boxShadow: {
-        xs: "0 1px 2px rgba(0,0,0,0.04)",
-        soft: "0 6px 18px rgba(6,182,212,0.10)",
-        medium: "0 14px 36px rgba(6,182,212,0.16)",
-        strong: "0 28px 64px rgba(6,182,212,0.22)",
-
-        glass:
-          "inset 0 1px 0 rgba(255,255,255,0.25), 0 18px 48px rgba(6,182,212,0.22)",
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+        "fade-in": {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+        "slide-in": {
+          from: { transform: "translateY(10px)", opacity: 0 },
+          to: { transform: "translateY(0)", opacity: 1 },
+        },
       },
-
-      /* =========================
-         BLUR (GLASS)
-      ========================= */
-      backdropBlur: {
-        xs: "2px",
-        sm: "6px",
-        md: "12px",
-        lg: "20px",
-      },
-
-      /* =========================
-         MOTION
-      ========================= */
-      transitionTimingFunction: {
-        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
-      },
-      transitionDuration: {
-        fast: "120ms",
-        normal: "240ms",
-        slow: "400ms",
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        "slide-in": "slide-in 0.3s ease-out",
       },
     },
   },
-
-  plugins: [],
-};
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+}

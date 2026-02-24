@@ -1,47 +1,34 @@
-import "./App.css";
-import React from "react";
-import Login from "../src/pages/Login";
-import Dashboard from "../src/pages/Dashboard";
-import AddStudent from "../src/pages/AddStudent";
-import StudentReports from "./pages/StudentReports";
-import SearchStudents from "./pages/SearchStudents";
-import AddClass from "../src/pages/AddClass.jsx";
-import Attendance from "../src/pages/Attendance.jsx";
+// src/App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Header } from './components/Layout/Header';
+import { HomePage } from './pages/HomePage';
+import { PlayerRegistryPage } from './pages/PlayerRegistryPage';
+import { GameSetupPage } from './pages/GameSetupPage';
+import { GamePage } from './pages/GamePage';
+import { HistoryPage } from './pages/HistoryPage';
+import { ToastProvider } from './components/UI/Toast';
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import Home from "./pages/Home";
-
-import MainLayout from "./layout/MainLayout";
-
-export default function App() {
-  const router = createBrowserRouter([
-    // Standalone login route (no layout)
-    {
-      path: "/login",
-      element: <Login />,
-    },
-
-    // Routes wrapped with MainLayout
-    {
-      path: "/",
-      element: <MainLayout />,
-      children: [
-        {
-          path: "/", // Home page
-          element: <Home />,
-        },
-        { path: "dashboard", element: <Dashboard /> },
-        { path: "addstudent", element: <AddStudent /> },
-        {path: "searchstudents", element: <SearchStudents />},
-        {path: "reports", element: <StudentReports />},
-        { path: "addclass", element: <AddClass /> },
-        { path: "attendance", element: <Attendance /> },
-
-        // Add more pages here as children to use MainLayout
-      ],
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+function App() {
+  return (
+    <Router>
+      <ToastProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          <Header />
+          <main className="container-custom py-8">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/players" element={<PlayerRegistryPage />} />
+              <Route path="/setup" element={<GameSetupPage />} />
+              <Route path="/game" element={<GamePage />} />
+              <Route path="/history" element={<HistoryPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </main>
+        </div>
+      </ToastProvider>
+    </Router>
+  );
 }
+
+export default App;

@@ -1,14 +1,478 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-* {
-    @apply transition-colors duration-200;
-    @apply font-sans; /* Use the font defined in Tailwind */
+@layer base {
+  :root {
+    /* Light theme (default) */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 210 40% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 210 40% 98%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 210 40% 98%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    
+    --radius: 0.5rem;
+    
+    /* Role colors */
+    --mafia: 0 84% 60%;
+    --mafia-foreground: 210 40% 98%;
+    
+    --civilian: 142 71% 45%;
+    --civilian-foreground: 210 40% 98%;
+    
+    --doctor: 199 89% 48%;
+    --doctor-foreground: 210 40% 98%;
+    
+    --detective: 271 91% 65%;
+    --detective-foreground: 210 40% 98%;
+    
+    --granny: 24 94% 53%;
+    --granny-foreground: 210 40% 98%;
+  }
+
+  .dark {
+    /* Dark theme */
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --success: 142 71% 45%;
+    --success-foreground: 222 47% 11%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+    
+    --info: 199 89% 48%;
+    --info-foreground: 222 47% 11%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 76% 48%;
+    
+    /* Role colors - slightly adjusted for dark mode */
+    --mafia: 0 74% 42%;
+    --mafia-foreground: 210 40% 98%;
+    
+    --civilian: 142 71% 45%;
+    --civilian-foreground: 222 47% 11%;
+    
+    --doctor: 199 89% 48%;
+    --doctor-foreground: 222 47% 11%;
+    
+    --detective: 271 91% 65%;
+    --detective-foreground: 222 47% 11%;
+    
+    --granny: 24 94% 53%;
+    --granny-foreground: 222 47% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
   
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Layout components */
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Card styles */
+  .card-base {
+    @apply bg-card text-card-foreground rounded-lg border shadow-sm;
+  }
+
+  .card-interactive {
+    @apply card-base hover:shadow-md transition-shadow duration-200 cursor-pointer;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 
+           px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80
+           px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .btn-destructive {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90
+           px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground
+           px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-accent hover:text-accent-foreground
+           px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Role badge styles */
+  .role-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .role-badge-mafia {
+    @apply role-badge bg-[hsl(var(--mafia))] text-[hsl(var(--mafia-foreground))];
+  }
+
+  .role-badge-civilian {
+    @apply role-badge bg-[hsl(var(--civilian))] text-[hsl(var(--civilian-foreground))];
+  }
+
+  .role-badge-doctor {
+    @apply role-badge bg-[hsl(var(--doctor))] text-[hsl(var(--doctor-foreground))];
+  }
+
+  .role-badge-detective {
+    @apply role-badge bg-[hsl(var(--detective))] text-[hsl(var(--detective-foreground))];
+  }
+
+  .role-badge-granny {
+    @apply role-badge bg-[hsl(var(--granny))] text-[hsl(var(--granny-foreground))];
+  }
+
+  /* Phase indicators */
+  .phase-indicator-night {
+    @apply bg-indigo-900 text-indigo-100 px-4 py-2 rounded-lg font-semibold;
+  }
+
+  .phase-indicator-day {
+    @apply bg-amber-500 text-amber-950 px-4 py-2 rounded-lg font-semibold;
+  }
+
+  /* Player card */
+  .player-card {
+    @apply card-base p-4 flex items-center space-x-4;
+  }
+
+  .player-card-alive {
+    @apply player-card border-l-4 border-l-success;
+  }
+
+  .player-card-dead {
+    @apply player-card opacity-60 border-l-4 border-l-destructive;
+  }
+
+  .player-avatar {
+    @apply w-12 h-12 rounded-full bg-muted flex items-center justify-center
+           text-2xl font-bold overflow-hidden;
+  }
+
+  .player-avatar-image {
+    @apply w-full h-full object-cover;
+  }
+
+  /* Timer */
+  .timer {
+    @apply text-4xl font-mono font-bold text-center;
+  }
+
+  .timer-urgent {
+    @apply timer text-destructive;
+  }
+
+  /* Form elements */
+  .input-custom {
+    @apply flex h-10 w-full rounded-md border border-input bg-background
+           px-3 py-2 text-sm ring-offset-background
+           file:border-0 file:bg-transparent file:text-sm file:font-medium
+           placeholder:text-muted-foreground
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
+           disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .label-custom {
+    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed 
+           peer-disabled:opacity-70;
+  }
+
+  /* Toggle switch for roles - FIXED VERSION without peer in @apply */
+  .toggle-switch {
+    @apply relative inline-flex items-center cursor-pointer;
+  }
+
+  .toggle-switch-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .toggle-switch-track {
+    @apply w-11 h-6 bg-muted rounded-full;
+    position: relative;
+  }
+
+  .toggle-switch-track::after {
+    content: '';
+    @apply absolute top-[2px] left-[2px] bg-white border border-gray-300 rounded-full h-5 w-5 transition-all;
+  }
+
+  .toggle-switch-input:checked + .toggle-switch-track {
+    @apply bg-primary;
+  }
+
+  .toggle-switch-input:checked + .toggle-switch-track::after {
+    transform: translateX(1.25rem);
+    @apply border-white;
+  }
+
+  /* Game setup card */
+  .setup-card {
+    @apply card-base p-6 space-y-4;
+  }
+
+  .setup-section {
+    @apply space-y-2;
+  }
+
+  .setup-section-title {
+    @apply text-lg font-semibold;
+  }
+
+  /* Player registry */
+  .player-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+
+  .player-list-item {
+    @apply flex items-center justify-between p-3 card-base;
+  }
+
+  /* Voting area */
+  .voting-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3;
+  }
+
+  .voting-card {
+    @apply card-interactive p-3 text-center transition-all
+           hover:scale-105 hover:shadow-lg;
+  }
+
+  .voting-card-selected {
+    @apply voting-card ring-2 ring-primary bg-primary/10;
+  }
+
+  /* Status indicators */
+  .status-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium;
+  }
+
+  .status-badge-alive {
+    @apply status-badge bg-success/20 text-success-foreground;
+  }
+
+  .status-badge-dead {
+    @apply status-badge bg-destructive/20 text-destructive-foreground;
+  }
+
+  /* Night phase action cards */
+  .action-card {
+    @apply card-base p-4 hover:shadow-md transition-shadow;
+  }
+
+  .action-card-disabled {
+    @apply action-card opacity-50 cursor-not-allowed;
+  }
+
+  /* Winner announcement */
+  .winner-announcement {
+    @apply fixed inset-0 bg-black/50 flex items-center justify-center z-50;
+  }
+
+  .winner-card {
+    @apply bg-card text-card-foreground p-8 rounded-lg shadow-xl max-w-md
+           text-center space-y-4;
+  }
+
+  .winner-title {
+    @apply text-3xl font-bold;
+  }
+
+  .winner-title-mafia {
+    @apply winner-title text-[hsl(var(--mafia))];
+  }
+
+  .winner-title-civilians {
+    @apply winner-title text-[hsl(var(--civilian))];
+  }
+
+  /* Utility classes */
+  .glass-effect {
+    @apply bg-background/80 backdrop-blur-sm;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animations */
+  .fade-in {
+    @apply animate-in fade-in duration-500;
+  }
+
+  .slide-in {
+    @apply animate-in slide-in-from-bottom duration-300;
+  }
+
+  /* Responsive text */
+  @screen sm {
+    .text-responsive {
+      @apply text-base;
+    }
+  }
+
+  @screen md {
+    .text-responsive {
+      @apply text-lg;
+    }
+  }
+
+  @screen lg {
+    .text-responsive {
+      @apply text-xl;
+    }
+  }
+}
+
+/* Custom animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+@layer utilities {
+  .scrollbar-custom {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+  }
+
+  .scrollbar-custom::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/50 rounded-full hover:bg-muted-foreground;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  .print-only {
+    display: block;
+  }
+}

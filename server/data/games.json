@@ -1,0 +1,225 @@
+[
+  {
+    "id": "1771916165527-jzg4vxq3x",
+    "date": "2026-02-24T06:56:05.414Z",
+    "players": [
+      {
+        "id": "1771911739558",
+        "name": "saad",
+        "image": null,
+        "createdAt": "2026-02-24T05:42:19.558Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "civilian",
+        "alive": true,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771911743974",
+        "name": "saeed",
+        "image": null,
+        "createdAt": "2026-02-24T05:42:23.974Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "doctor",
+        "alive": false,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771911750150",
+        "name": "asif",
+        "image": null,
+        "createdAt": "2026-02-24T05:42:30.150Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "civilian",
+        "alive": true,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771911755078",
+        "name": "usama",
+        "image": null,
+        "createdAt": "2026-02-24T05:42:35.078Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "civilian",
+        "alive": true,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771912389822",
+        "name": "uzair",
+        "image": null,
+        "createdAt": "2026-02-24T05:53:09.822Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "civilian",
+        "alive": true,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771912399494",
+        "name": "umair",
+        "image": null,
+        "createdAt": "2026-02-24T05:53:19.494Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "mafia",
+        "alive": false,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      },
+      {
+        "id": "1771912410270",
+        "name": "asad",
+        "image": null,
+        "createdAt": "2026-02-24T05:53:30.270Z",
+        "gamesPlayed": 0,
+        "wins": 0,
+        "role": "mafia",
+        "alive": false,
+        "protected": false,
+        "investigated": false,
+        "visitedBy": null
+      }
+    ],
+    "winner": "civilians",
+    "rounds": 4,
+    "setup": {
+      "mafiaCount": 2,
+      "specialRoles": {
+        "doctor": true,
+        "detective": false,
+        "granny": false
+      }
+    }
+  },
+  {
+    "id": "1771916558491-4e2pomhrp",
+    "date": "2026-02-24T07:02:38.409Z",
+    "players": [
+      {
+        "id": "1771915872069-70pj9r9pt",
+        "name": "saad",
+        "role": "civilian",
+        "alive": false,
+        "image": null
+      },
+      {
+        "id": "1771915877062-m9pnb45at",
+        "name": "saeed",
+        "role": "mafia",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915882632-jpkask1su",
+        "name": "asif",
+        "role": "mafia",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915904120-h3e55rqeu",
+        "name": "usama",
+        "role": "mafia",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915909666-rrbhj73qd",
+        "name": "waqar",
+        "role": "detective",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915915087-uel4yvxda",
+        "name": "umair",
+        "role": "civilian",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915921674-dtyn4lcit",
+        "name": "uzair",
+        "role": "civilian",
+        "alive": true,
+        "image": null
+      }
+    ],
+    "winner": "mafia",
+    "rounds": 2,
+    "setup": {
+      "mafiaCount": 3,
+      "specialRoles": {
+        "doctor": false,
+        "detective": true,
+        "granny": false
+      }
+    }
+  },
+  {
+    "id": "1771916701188-iesp41856",
+    "date": "2026-02-24T07:05:01.117Z",
+    "players": [
+      {
+        "id": "1771915872069-70pj9r9pt",
+        "name": "saad",
+        "role": "civilian",
+        "alive": false,
+        "image": null
+      },
+      {
+        "id": "1771915877062-m9pnb45at",
+        "name": "saeed",
+        "role": "mafia",
+        "alive": true,
+        "image": null
+      },
+      {
+        "id": "1771915882632-jpkask1su",
+        "name": "asif",
+        "role": "civilian",
+        "alive": false,
+        "image": null
+      },
+      {
+        "id": "1771915904120-h3e55rqeu",
+        "name": "usama",
+        "role": "civilian",
+        "alive": false,
+        "image": null
+      },
+      {
+        "id": "1771915909666-rrbhj73qd",
+        "name": "waqar",
+        "role": "civilian",
+        "alive": true,
+        "image": null
+      }
+    ],
+    "winner": "mafia",
+    "rounds": 4,
+    "setup": {
+      "mafiaCount": 1,
+      "specialRoles": {
+        "doctor": false,
+        "detective": false,
+        "granny": false
+      }
+    }
+  }
+]
