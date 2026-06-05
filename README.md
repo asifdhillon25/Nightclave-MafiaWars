@@ -1,295 +1,257 @@
-🎲 Mafia Game MVP
-A complete desktop application for playing the classic social deduction game Mafia (also known as Werewolf) with friends in-person. The app serves as a digital game master that manages the entire game flow, role assignments, and tracking - eliminating the need for a human moderator.
+# 🎲 Mafia Game MVP
 
-[Nightclave-MafiaWars/](https://github.com/asifdhillon25/Nightclave-MafiaWars)
+<p align="center">
+  <img src="YOUR_IMAGE_LINK_HERE" width="100%" />
+</p>
 
-✨ Features
-🎮 Complete Game Management
-Player Registry - Add players with names and optional photos
+<p align="center">
+  Interactive desktop application that digitizes the classic Mafia/Werewolf social deduction game with automated game flow, role management, and intelligent tracking systems.
+</p>
 
-Game Setup - Configure mafia count, special roles, and voting timer
+---
 
-Role Assignment - Automatic random role distribution
+# 🚀 Overview
 
-Phase Management - Night → Day → Voting phases with full control
+Mafia Game MVP is a full-stack desktop application designed to act as a digital game master for the classic social deduction game Mafia (Werewolf).
 
-Win Detection - Automatic win condition checking
-👥 Role System
-Role	Icon	Ability
-Mafia	🔪	Kill one player each night
-Doctor	💊	Save one player each night
-Detective	🔍	Investigate one player each night
-Granny	👵	Kills a mafia if targeted
-Civilian	👤	Find and vote out the mafia
+The system automates role assignments, game phase management, voting workflows, player tracking, and win condition detection — eliminating the need for a human moderator during gameplay.
 
-📊 Game Features
-Voting Timer - Configurable countdown (30s, 60s, 90s, 120s)
+Built with a modern responsive interface and persistent local storage, the application provides a complete offline-first multiplayer experience for game nights and social gatherings.
 
-Player Tracking - Real-time status of alive/dead players
+---
 
-Game History - Complete record of past games with statistics
+# ✨ Key Features
 
-MVP Detection - Automatically identifies winning players
+## 🎮 Complete Game Management
 
-💾 Data Persistence
-JSON File Storage - All data saved in human-readable JSON files
+* Automated game flow management
+* Dynamic role assignment system
+* Night → Day → Voting phase transitions
+* Automatic win condition detection
+* Configurable voting timers
 
-Player Statistics - Track games played, wins, and win rates
+## 👥 Intelligent Role System
 
-Export/Import - Backup and restore game history
+* 🔪 Mafia
+* 💊 Doctor
+* 🔍 Detective
+* 👵 Granny
+* 👤 Civilian
 
-Local Only - No cloud, no accounts, complete privacy
+Each role contains unique gameplay mechanics and interactive workflows.
 
-🎨 User Interface
-Dual Themes - Light and dark mode support
+## 📊 Player & Match Tracking
 
-Responsive Design - Works on desktop, tablet, and mobile
+* Real-time alive/dead player tracking
+* Game history and statistics
+* MVP detection and winner analytics
+* Persistent player profiles
 
-Visual Feedback - Animations, badges, and progress indicators
+## 💾 Local Data Persistence
 
-Intuitive Controls - Clear buttons and guided workflows
+* JSON-based local storage system
+* Export and backup support
+* Game recovery workflows
+* Offline-first architecture
 
-🛠 Technology Stack
-Frontend
-React 18 - UI library
+## 🎨 Modern UI/UX
 
-React Router 6 - Navigation
+* Dark & light mode support
+* Responsive multi-device interface
+* Interactive animations and feedback
+* Clean and intuitive game controls
 
-Tailwind CSS - Styling
+---
 
-Lucide React - Icons
+# 🛠️ Tech Stack
 
-Vite - Build tool
+## Frontend
 
-Backend
-Express - Web server
+* React.js
+* React Router
+* Tailwind CSS
+* Vite
+* Lucide React
 
-Node.js - Runtime
+## Backend
 
-fs-extra - File operations
+* Node.js
+* Express.js
+* fs-extra
+* UUID
 
-UUID - ID generation
+## Storage
 
-📋 Prerequisites
-Node.js (v18 or higher)
+* JSON File Storage
 
-npm (v9 or higher)
-1. Clone the Repository
-bash
+---
+
+# 🧠 System Architecture
+
+```text
+Player Registry
+       ↓
+Game Setup Engine
+       ↓
+Role Assignment System
+       ↓
+Phase Management
+       ↓
+Voting & Elimination
+       ↓
+Win Detection & Analytics
+```
+
+---
+
+# ⚡ Core Functionalities
+
+* ✅ Automated role distribution
+* ✅ Voting timer system
+* ✅ Phase transition workflows
+* ✅ Persistent player statistics
+* ✅ Game history tracking
+* ✅ Offline-first local gameplay
+* ✅ Export & backup support
+
+---
+
+# 📁 Project Structure
+
+```text
+mafia-game/
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   └── utils/
+│
+├── server/
+│   ├── routes/
+│   ├── middleware/
+│   ├── data/
+│   └── utils/
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+```bash
+# Clone repository
 git clone https://github.com/asifdhillon25/Nightclave-MafiaWars
-cd mafia-game
-2. Install Dependencies
-bash
-# Install client dependencies
+
+# Navigate into project
+cd Nightclave-MafiaWars
+
+# Install frontend dependencies
 cd client
 npm install
 
-# Install server dependencies
+# Install backend dependencies
 cd ../server
 npm install
 
 # Return to root
 cd ..
-3. Start the Application
-bash
-# Start both client and server
-npm run dev
-This will start:
-
-React client on http://localhost:5173
-
-Express server on http://localhost:5000
-
-Open your browser and navigate to http://localhost:5173 to start playing!
-
-📖 How to Play
-First-Time Setup
-1. Add Players
-Navigate to Player Registry
-
-Click "Add Player"
-
-Enter player name (optionally add a photo)
-
-Repeat for all players in your group
-
-2. Start a Game
-Go to Game Setup
-
-Select players from the list (minimum 4)
-
-Choose number of mafia
-
-Toggle special roles as desired
-
-Set voting timer duration
-
-Click "Start Game"
-
-During the Game
-🌙 Night Phase
-Mafia chooses a victim
-
-Doctor chooses who to save
-
-Detective chooses who to investigate
-
-Review actions and end night phase
-
-☀️ Day Phase
-Read the night results announcement
-
-Detective can share findings
-
-Players discuss
-
-Click "Start Voting Phase"
-
-🗳️ Voting Phase
-Handler selects players to vote for
-
-Click "Cast Vote" to record each vote
-
-Watch the vote counter and timer
-
-View results when complete
-
-Confirmed player is eliminated
-
-Game End
-Winner is automatically detected
-
-View game summary and statistics
-
-Start a new game or browse history
-
-📁 Project Structure
-text
-mafia-game/
-├── client/                 # React frontend
-│   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/         # Page components
-│   │   ├── utils/         # Utility functions
-│   │   └── hooks/         # Custom React hooks
-│   ├── public/            # Static assets
-│   └── package.json
-│
-├── server/                 # Express backend
-│   ├── routes/            # API routes
-│   ├── middleware/         # Express middleware
-│   ├── utils/             # Server utilities
-│   ├── data/              # JSON data files
-│   └── package.json
-│
-├── package.json            # Root package.json
-└── README.md              # This file
-🔌 API Endpoints
-Players
-Method	Endpoint	Description
-GET	/api/players	Get all players
-POST	/api/players	Add new player
-PATCH	/api/players/:id/stats	Update player stats
-DELETE	/api/players/:id	Delete player
-Games
-Method	Endpoint	Description
-GET	/api/games	Get game history
-POST	/api/games	Save game record
-DELETE	/api/games/:id	Delete game
-Current Game
-Method	Endpoint	Description
-GET	/api/current-game	Load current game
-POST	/api/current-game	Save current game
-DELETE	/api/current-game	Clear current game
-💾 Data Storage
-All game data is stored as JSON files in the server/data/ directory:
-
-players.json - Registered players and statistics
-
-games.json - Complete game history
-
-current-game.json - Active game state
-
-🎯 Game Rules
-Win Conditions
-Mafia Wins: When number of mafia equals or exceeds civilians
-
-Civilians Win: When all mafia are eliminated
-
-Role Abilities
-Mafia: Kills one player each night
-
-Doctor: Can save one player each night (cannot save self)
-
-Detective: Learns if a player is mafia when investigating
-
-Granny: If targeted by mafia, kills one random mafia instead
-
-🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-Fork the repository
-
-Create your feature branch (git checkout -b feature/AmazingFeature)
-
-Commit your changes (git commit -m 'Add some AmazingFeature')
-
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🙏 Acknowledgments
-Inspired by the classic party game Mafia/Werewolf
-
-Icons provided by Lucide
-
-Built with React and Express
-
-📧 Contact
-Muhammad Asif Dhillon asifdhillon25@gmail.com
-
-Project Link:[ https://github.com/asifdhillon25/Nightclave-MafiaWars](https://github.com/asifdhillon25/Nightclave-MafiaWars/)
-
-🚦 Quick Commands Reference
-bash
-# Install all dependencies
-cd client && npm install
-cd ../server && npm install
 
 # Run development servers
 npm run dev
+```
 
-# Build for production
-cd client && npm run build
+---
 
-# Run client only
-cd client && npm run dev
+# 🌐 Development Servers
 
-# Run server only
-cd server && npm run dev
-⚠️ Troubleshooting
-Port Already in Use
-If port 5000 is already in use:
+```text
+Frontend → http://localhost:5173
+Backend  → http://localhost:5000
+```
 
-bash
-# Kill the process on Windows
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
+---
 
-# On Mac/Linux
-lsof -ti:5000 | xargs kill -9
-CORS Issues
-Ensure the server is running on port 5000 and the client on port 5173. The CORS configuration allows requests from http://localhost:5173.
+# 📊 API Endpoints
 
-Images Not Loading
-The app supports base64 encoded images. Keep images under 1MB for optimal performance.
+## Players
 
-Made with ❤️ for game nights
+* GET `/api/players`
+* POST `/api/players`
+* PATCH `/api/players/:id/stats`
+* DELETE `/api/players/:id`
 
+## Games
 
-Git (optional)
+* GET `/api/games`
+* POST `/api/games`
+* DELETE `/api/games/:id`
 
-🚀 Quick Start
+## Current Game
+
+* GET `/api/current-game`
+* POST `/api/current-game`
+* DELETE `/api/current-game`
+
+---
+
+# 🎯 Gameplay Features
+
+## 🌙 Night Phase
+
+* Mafia selects target
+* Doctor selects protection
+* Detective investigates players
+
+## ☀️ Day Phase
+
+* Night results announcement
+* Group discussion workflows
+* Voting preparation
+
+## 🗳️ Voting Phase
+
+* Real-time vote tracking
+* Timer-based elimination system
+* Automatic result calculation
+
+---
+
+# 🔥 Highlights
+
+* Built a complete digital game master system for Mafia/Werewolf gameplay
+* Engineered automated game-state management workflows
+* Designed scalable local persistence architecture using JSON storage
+* Created responsive multi-device UI with modern dark/light themes
+* Implemented intelligent gameplay tracking and statistics systems
+
+---
+
+# 🌍 Future Improvements
+
+* Multiplayer online support
+* WebSocket real-time synchronization
+* Voice chat integration
+* AI-powered moderator assistant
+* Mobile application support
+* Tournament mode system
+
+---
+
+# 👨‍💻 Author
+
+## Muhammad Asif Dhillon
+
+Full-Stack AI Developer focused on Computer Vision, Intelligent Systems, and scalable software engineering.
+
+* 🌐 Portfolio: https://my-portfolio25-web25.vercel.app/
+* 💼 LinkedIn: https://www.linkedin.com/in/muhammad-asif-484860372/
+* 🐙 GitHub: https://github.com/asifdhillon25
+
+---
+
+<h3 align="center">
+✨ Built for Game Nights & Intelligent Interactive Experiences ✨
+</h3>
