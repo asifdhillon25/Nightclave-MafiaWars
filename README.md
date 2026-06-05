@@ -1,7 +1,7 @@
 # 🎲 Mafia Game MVP
 
 <p align="center">
-  <img src="YOUR_IMAGE_LINK_HERE" width="100%" />
+  <img src="https://github.com/asifdhillon25/Nightclave-MafiaWars/blob/main/client/src/assets/1.png" width="100%" />
 </p>
 
 <p align="center">
